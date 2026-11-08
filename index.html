@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zomato-style food discovery and ordering clone built with HTML5, CSS3 and JavaScript.">
+  <title>Foodie — Food Discovery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="Foodie home">foodie</a>
+  <div class="location" id="locationBtn" role="button" tabindex="0">📍 <span id="locationText">Bhubaneswar</span>⌄</div>
+  <div class="search-wrap">
+    <span>⌕</span>
+    <input id="searchInput" type="search" placeholder="Search for restaurant, cuisine or a dish..." autocomplete="off">
+    <div id="suggestions" class="suggestions hidden"></div>
+  </div>
+  <div class="nav-actions">
+    <button class="text-btn" id="loginBtn">Log in</button>
+    <button class="text-btn signup" id="signupBtn">Sign up</button>
+    <button class="icon-btn" id="cartBtn" aria-label="Cart">🛒<span id="cartCount">0</span></button>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Discover the best food in your city</p>
+      <h1>Order food you love.</h1>
+      <p>Find restaurants, explore menus and get your favourites delivered.</p>
+      <div class="hero-search">
+        <span>⌕</span>
+        <input id="heroSearch" type="search" placeholder="Search for restaurant or dish">
+        <button id="heroSearchBtn">Search</button>
+      </div>
+    </div>
+  </section>
+  <section class="container quick-actions">
+    <button class="action-card active" data-tab="delivery"><span class="round-icon">🛵</span><div><b>Delivery</b><small>Order food online</small></div></button>
+    <button class="action-card" data-tab="dining"><span class="round-icon">🍽️</span><div><b>Dining</b><small>Explore restaurants</small></div></button>
+    <button class="action-card" data-tab="offers"><span class="round-icon">🏷️</span><div><b>Offers</b><small>Save on your order</small></div></button>
+  </section>
+  <section class="container section">
+    <div class="section-head"><div><h2>Inspiration for your first order</h2><p>Popular picks around you</p></div><div class="slider-controls"><button id="prevCat">‹</button><button id="nextCat">›</button></div></div>
+    <div class="category-row" id="categoryRow"></div>
+  </section>
+  <section class="container section">
+    <div class="section-head"><div><h2>Top restaurants near you</h2><p id="resultText">Showing popular choices</p></div><button class="filter-btn" id="filterBtn">☷ Filters</button></div>
+    <div id="restaurantGrid" class="restaurant-grid"></div>
+    <div id="emptyState" class="empty hidden"><div>🍽️</div><h3>No restaurants found</h3><p>Try another restaurant, dish or cuisine.</p><button class="primary" id="clearSearch">Clear search</button></div>
+  </section>
+  <section class="container app-banner">
+    <div><p class="eyebrow">A better food experience</p><h2>Everything you need in one place.</h2><p>Browse menus, manage your cart and place a demo order — all from this responsive front-end clone.</p></div>
+    <div class="phone">📱</div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><div class="brand footer-brand">foodie</div><p>A Zomato-inspired front-end clone for learning and portfolio projects.</p></div>
+    <div><h4>About</h4><a href="#">Who we are</a><a href="#">Blog</a><a href="#">Careers</a></div>
+    <div><h4>Support</h4><a href="#">Help center</a><a href="#">Safety</a><a href="#">Terms</a></div>
+    <div><h4>Social</h4><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Twitter</a></div>
+  </div>
+  <div class="copyright">© 2026 Foodie. Educational project — not affiliated with Zomato.</div>
+</footer>
+<div id="toast" class="toast"></div>
+<div id="modal" class="modal hidden" aria-hidden="true">
+  <div class="modal-card">
+    <button class="close" id="modalClose">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
